@@ -1,0 +1,23 @@
+{
+  "name": "redux-iows",
+  "version": "1.0.0",
+  "description": "A redux middleware for socket-io that supports multiple connections",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"No tests..\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exchizz/redux-iows.git"
+  },
+  "keywords": [
+    "socket.io",
+    "redux"
+  ],
+  "author": "Mathias Neerup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Exchizz/redux-iows/issues"
+  },
+  "homepage": "https://github.com/Exchizz/redux-iows#readme"
+}
