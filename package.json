@@ -1,14 +1,14 @@
 {
-  "name": "redux-iows",
+  "name": "redux-yasio",
   "version": "1.0.0",
-  "description": "A redux middleware for socket-io that supports multiple connections",
+  "description": "Yet-Another-Socket.IO (yasio) middleware for redux",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"No tests..\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Exchizz/redux-iows.git"
+    "url": "git+https://github.com/Exchizz/redux-yasio.git"
   },
   "keywords": [
     "socket.io",
@@ -17,7 +17,10 @@
   "author": "Mathias Neerup",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Exchizz/redux-iows/issues"
+    "url": "https://github.com/Exchizz/redux-yasio/issues"
   },
-  "homepage": "https://github.com/Exchizz/redux-iows#readme"
+  "homepage": "https://github.com/Exchizz/redux-yasio#readme",
+  "dependencies": {
+    "socket.io-client": "^2.2.0"
+  }
 }
