@@ -13,13 +13,17 @@ export default function CreateWSIOMiddleWare( eventName = 'action') {
   let emitBounds = {};
 
   const initialize = (dispatch, url, connectionId ) => {
-	sockets[connectionId] = io(url);
-	let socket = sockets[connectionId];
+	if(!sockets[connectionId]){
+		sockets[connectionId] = io(url);
+		let socket = sockets[connectionId];
 
-	emitBounds[connectionId] = socket.emit.bind(socket);
-	socket.on(eventName, dispatch);
-	socket.on("connect", function(){dispatch({type:WSIO_CONNECTED, connectionId: connectionId})});
-	socket.on("disconnect", function(){dispatch({type:WSIO_DISCONNECTED, connectionId: connectionId})});
+		emitBounds[connectionId] = socket.emit.bind(socket);
+		socket.on(eventName, dispatch);
+		socket.on("connect", function(){dispatch({type:WSIO_CONNECTED, connectionId: connectionId})});
+		socket.on("disconnect", function(data){dispatch({type:WSIO_DISCONNECTED, connectionId: connectionId, reason: data})});
+	} else {
+		console.debug("Connection exists");
+	}
   }
 
   return ({ dispatch }) => {
